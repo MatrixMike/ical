@@ -104,7 +104,7 @@ documentParser =
             scale <- property "CALSCALE"
             unless (scale == "GREGORIAN")
                    (parseError (GeneralProblem "Need time gregorian scale."))
-            timezones <- fmap M.fromList (objects "VTIMEZONE" timeZoneParser)
+            timezones <- fmap M.fromList (objects "VTIMEZONE" timeZoneParser)   --mike
             events <- objects "VEVENT" (eventParser timezones)
             return events)
 
@@ -157,7 +157,7 @@ utcTimeParser timezones s =
                      ("%Y%m%dT%H%M%S" ++ z)
                      (T.unpack s')
         justdate s' =
-          fmap (\d -> UTCTime d 0)
+          fmap (`UTCTime`  0)
                (parseTimeM True
                            defaultTimeLocale
                            "%Y%m%d"
