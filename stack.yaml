@@ -38,6 +38,16 @@ extra-deps: [
 , semigroups-0.18.3
 , transformers-base-0.4.4
 , transformers-compat-0.5.1.4
+, base-orphans-0.6
+, cabal-doctest-1.0.2
+, comonad-5.0.2
+, contravariant-1.4
+, distributive-0.5.3
+, fail-4.9.0.0
+, prelude-extras-0.4.0.3
+, stm-2.4.4.1
+, StateVar-1.1.0.4
+, void-0.7.2
 ]
 
 # Override default flag values for local packages and extra-deps
@@ -47,15 +57,15 @@ flags: {}
 extra-package-dbs: []
 
 # Control whether we use the GHC we find on the path
-# system-ghc: true
+system-ghc: true
 
 # Require a specific version of stack, using version ranges
 # require-stack-version: -any # Default
-# require-stack-version: >= 0.1.4.0
+#require-stack-version: >= 0.1.4.0
 
 # Override the architecture used by stack, especially useful on Windows
 # arch: i386
-# arch: x86_64
+arch: x86_64
 
 # Extra directories used by stack for building
 # extra-include-dirs: [/path/to/dir]
